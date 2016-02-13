@@ -3,11 +3,15 @@ using BudgetTracker.Domain;
 
 namespace BudgetTracker.StatementImporter
 {
-    public class PDFStatementImporter : IStatementImporter
+    public class PdfStatementImporter : StatementImporter<PDFStatementSchema>
     {
-        public List<Transaction> ImportStatementTransactions(string filePath)
+        public override List<Transaction> ImportStatementTransactions(string filePath)
         {
             throw new System.NotImplementedException();
+        }
+
+        public PdfStatementImporter(PDFStatementSchema schema) : base(schema)
+        {
         }
     }
 }
